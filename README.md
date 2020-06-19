@@ -25,7 +25,8 @@ Things you may want to cover:
 
 
 # Chat space DB設計
-## usersテーブル
+
+## users table
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
@@ -36,7 +37,7 @@ Things you may want to cover:
 - has_many : groups_users
 - has_many : messages
 
-## groupsテーブル
+## groups table
 |Column|Type|Options|
 |------|----|-------|
 |groupname|string|null: false|
@@ -45,7 +46,7 @@ Things you may want to cover:
 - belongs_to :users
 - has_many : groups_users
 
-## groups_usersテーブル
+## groups_users table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -55,7 +56,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_many : messages
 
-## messagesテーブル
+## messages table
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
