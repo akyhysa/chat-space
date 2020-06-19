@@ -23,10 +23,15 @@ Things you may want to cover:
 
 * ...
 
+<<<<<<< Updated upstream
 
 # Chat space DB設計
 
 ## users table
+=======
+# Chat space DB設計
+## usersテーブル
+>>>>>>> Stashed changes
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
@@ -37,7 +42,11 @@ Things you may want to cover:
 - has_many : groups_users
 - has_many : messages
 
+<<<<<<< Updated upstream
 ## groups table
+=======
+## groupsテーブル
+>>>>>>> Stashed changes
 |Column|Type|Options|
 |------|----|-------|
 |groupname|string|null: false|
@@ -46,7 +55,11 @@ Things you may want to cover:
 - belongs_to :users
 - has_many : groups_users
 
+<<<<<<< Updated upstream
 ## groups_users table
+=======
+## groups_usersテーブル
+>>>>>>> Stashed changes
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -56,7 +69,11 @@ Things you may want to cover:
 - belongs_to :user
 - has_many : messages
 
+<<<<<<< Updated upstream
 ## messages table
+=======
+## messagesテーブル
+>>>>>>> Stashed changes
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
