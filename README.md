@@ -42,6 +42,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
+- has_many : messages
 - has_many : groups_users
 
 ## groups_users table
@@ -51,10 +52,9 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :groups
-- belongs_to :user
-- has_many : messages
+- belongs_to :users
 
-## messages table
+## messages
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
@@ -63,4 +63,4 @@ Things you may want to cover:
 |groups_users_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
-- has_many  :groups,  through:  :groups_users
+- belongs_to: groups
