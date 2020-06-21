@@ -41,7 +41,7 @@ Things you may want to cover:
 |groupname|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- has_many : users
 - has_many : messages
 - has_many : groups_users
 
@@ -51,16 +51,16 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 ## messages
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|string||
 |user_id|integer|null: false, foreign_key: true|
 |groups_users_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to: groups
+- belongs_to :user
+- belongs_to: group
