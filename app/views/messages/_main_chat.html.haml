@@ -50,11 +50,11 @@
                 .MessageContent__Message おはよう！
     .ChatBox
         %form.Form
-            %input.Form__message{:type => "hidden"}/
+            %input.Form__message{type: "hidden"}/
             .Form__Content
-                %input.Form__InputContent{:placeholder => "type a message", :type => "text"}/
+                %input.Form__InputContent{placeholder: "type a message", type: "text"}/
                 %label{class:"Form__inputImage"}
                     %i=icon('far', 'image', class:"Form__icon")
-                    %input{:class => "hidden", :type => "file"}
-            %input{:class => "Form__submit", :type => "submit",:value =>"Send"}/
+                    %input{class: "hidden", type: "file"}
+            %input{class: "Form__submit", type: "submit",value: "Send"}/
             
