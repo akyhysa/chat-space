@@ -1,0 +1,60 @@
+.ChatMain
+    .GroupBox
+        .GroupBox__Group
+            .GroupBox__GroupName test
+            %ul.GroupBox__GroupList
+                Member: 
+                %li.GroupBox__GroupMember
+                    masa
+                %li.GroupBox__GroupMember
+                    aki
+        .GroupBox__Edit
+            = link_to "#", class: "EditBtn__edit" do
+                .EditBtn Edit
+    .MessageField
+        .MessageBox
+            .MessageInfo
+                .MessageInfo__UserName masa
+                .MessageInfo__date 2019/11/20(Wed) 17:43:01
+            .MessageContent
+                .MessageContent__Message おはよう！
+        .MessageBox
+            .MessageInfo
+                .MessageInfo__UserName masa
+                .MessageInfo__date 2019/11/20(Wed) 17:43:01
+            .MessageContent
+                .MessageContent__Message おはよう！
+        .MessageBox
+            .MessageInfo
+                .MessageInfo__UserName masa
+                .MessageInfo__date 2019/11/20(Wed) 17:43:01
+            .MessageContent
+                .MessageContent__Message おはよう！
+        .MessageBox
+            .MessageInfo
+                .MessageInfo__UserName masa
+                .MessageInfo__date 2019/11/20(Wed) 17:43:01
+            .MessageContent
+                .MessageContent__Message おはよう！
+        .MessageBox
+            .MessageInfo
+                .MessageInfo__UserName masa
+                .MessageInfo__date 2019/11/20(Wed) 17:43:01
+            .MessageContent
+                .MessageContent__Message おはよう！
+        .MessageBox
+            .MessageInfo
+                .MessageInfo__UserName masa
+                .MessageInfo__date 2019/11/20(Wed) 17:43:01
+            .MessageContent
+                .MessageContent__Message おはよう！
+    .ChatBox
+        %form.Form
+            %input.Form__message{:type => "hidden"}/
+            .Form__Content
+                %input.Form__InputContent{:placeholder => "type a message", :type => "text"}/
+                %label{class:"Form__inputImage"}
+                    %i=icon('far', 'image', class:"Form__icon")
+                    %input{:class => "hidden", :type => "file"}
+            %input{:class => "Form__submit", :type => "submit",:value =>"Send"}/
+            
