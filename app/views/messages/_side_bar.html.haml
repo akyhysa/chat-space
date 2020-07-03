@@ -1,12 +1,14 @@
 .SideBar
     .UserBox
         .SideBox
-            .SideBox__Name masa
+            .SideBox__Name 
+                = current_user.name
             .SideBox__Icons
                 = link_to "#", class: "Icons__BtnEdit" do
                     = icon('fas', 'edit', class: "Icons__BtnIcona")
                     %span<>
-                = link_to "#", class: "Icons__BtnCog" do
+                = link_to edit_user_path(current_user), class: "Icons__BtnCog" do
+                
                     = icon('fas', 'cog', class: "Icons__BtnIconb")
                     %span<>
     .GroupBox
