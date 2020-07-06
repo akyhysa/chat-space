@@ -1,60 +1,26 @@
 .ChatMain
-    .GroupBox
-        .GroupBox__Group
-            .GroupBox__GroupName test
-            %ul.GroupBox__GroupList
-                Member: 
-                %li.GroupBox__GroupMember
-                    masa
-                %li.GroupBox__GroupMember
-                    aki
-        .GroupBox__Edit
-            = link_to "#", class: "EditBtn__edit" do
-                .EditBtn Edit
-    .MessageField
-        .MessageBox
-            .MessageInfo
-                .MessageInfo__UserName masa
-                .MessageInfo__date 2019/11/20(Wed) 17:43:01
-            .MessageContent
-                .MessageContent__Message おはよう！
-        .MessageBox
-            .MessageInfo
-                .MessageInfo__UserName masa
-                .MessageInfo__date 2019/11/20(Wed) 17:43:01
-            .MessageContent
-                .MessageContent__Message おはよう！
-        .MessageBox
-            .MessageInfo
-                .MessageInfo__UserName masa
-                .MessageInfo__date 2019/11/20(Wed) 17:43:01
-            .MessageContent
-                .MessageContent__Message おはよう！
-        .MessageBox
-            .MessageInfo
-                .MessageInfo__UserName masa
-                .MessageInfo__date 2019/11/20(Wed) 17:43:01
-            .MessageContent
-                .MessageContent__Message おはよう！
-        .MessageBox
-            .MessageInfo
-                .MessageInfo__UserName masa
-                .MessageInfo__date 2019/11/20(Wed) 17:43:01
-            .MessageContent
-                .MessageContent__Message おはよう！
-        .MessageBox
-            .MessageInfo
-                .MessageInfo__UserName masa
-                .MessageInfo__date 2019/11/20(Wed) 17:43:01
-            .MessageContent
-                .MessageContent__Message おはよう！
-    .ChatBox
-        %form.Form
-            %input.Form__message{type: "hidden"}/
-            .Form__Content
-                %input.Form__InputContent{placeholder: "type a message", type: "text"}/
-                %label{class:"Form__inputImage"}
-                    %i=icon('far', 'image', class:"Form__icon")
-                    %input{class: "hidden", type: "file"}
-            %input{class: "Form__submit", type: "submit",value: "Send"}/
-            
+  .GroupBox
+    .GroupBox__Group
+      .GroupBox__GroupName
+      = @group.name
+      %ul.GroupBox__GroupList
+        Member: 
+        - @group.users.each do |user|
+          = user.name
+    .GroupBox__Edit
+      = link_to edit_group_path(@group), class: "EditBtn__edit" do
+        .EditBtn Edit
+        
+  .MessageField
+    = render @messages
+
+
+  .ChatBox  
+    = form_with model: [@group, @message], html: {class:"Form"}, local: true do |f|
+      .Form__Content
+        = f.text_field :content, class: 'Form__InputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do 
+          = icon('far','image', class:'Form__icon')
+          = f.file_field :image, class:'hidden'
+      = f.submit 'Send', class: 'Form__submit'
+

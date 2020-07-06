@@ -1,21 +1,22 @@
 .SideBar
-    .UserBox
-        .SideBox
-            .SideBox__Name 
-                = current_user.name
-            .SideBox__Icons
-                = link_to new_group_path(), class: "Icons__BtnEdit" do
-                    = icon('fas', 'edit', class: "Icons__BtnIcona")
-                    %span<>
-                = link_to edit_user_path(current_user), class: "Icons__BtnCog" do
-                    = icon('fas', 'cog', class: "Icons__BtnIconb")
-                    %span<>
-    .GroupBox
-        - current_user.groups.each do |group|
-            .GroupList 
-                = link_to "#" do
-                    .GroupList__GroupName 
-                        = group.name
-                    .GroupList__Messages 
-                        メッセージはまだありません
+  .UserBox
+    .SideBox
+      .SideBox__Name 
+        = current_user.name
+      .SideBox__Icons
+        = link_to new_group_path(), class: "Icons__BtnEdit" do
+          = icon('fas', 'edit', class: "Icons__BtnIcona")
+          %span<>
+        = link_to edit_user_path(current_user), class: "Icons__BtnCog" do
+          = icon('fas', 'cog', class: "Icons__BtnIconb")
+          %span<>
+  .GroupBox
+    - current_user.groups.each do |group|
+      .GroupList 
+        = link_to group_messages_path(group) do
+          .GroupList__GroupName 
+            = group.name
+          .GroupList__Messages 
+            = group.show_last_message
+
 
